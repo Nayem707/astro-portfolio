@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projectItems = [
+  {
+    title: 'Fieldnotes',
+    summary: 'A reflective journaling platform built to make everyday observation feel calmer and more intentional.',
+    status: 'Brand platform · Digital product',
+  },
+  {
+    title: 'Openhouse',
+    summary: 'A human-centered place-finding experience designed to help people feel welcome before they even arrive.',
+    status: 'Product design · Development',
+  },
+  {
+    title: 'Goodside',
+    summary: 'An editorial e-commerce concept focused on beautiful essentials, useful storytelling, and trusted quality.',
+    status: 'Art direction · E-commerce',
+  },
+];
+---
+
+<Layout title="Projects — Jordan Lee" description="Explore recent portfolio projects and digital product work by Jordan Lee." currentPage="projects">
+  <section class="py-12">
+    <p class="mb-4 text-[10px] font-semibold uppercase tracking-[0.13em] text-[#777971]">Selected work</p>
+    <h1 class="font-serif text-[clamp(46px,7vw,74px)] leading-[0.95] tracking-[-0.065em]">Projects that invite attention and trust.</h1>
+  </section>
+
+  <section class="grid gap-6 pb-16 md:grid-cols-3">
+    {projectItems.map((project) => (
+      <article class="rounded-[28px] border border-[#e3e2dc] bg-[#faf9f5] p-6 transition-transform duration-200 hover:-translate-y-1">
+        <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#d7f36a] font-serif text-[22px]">✳</div>
+        <p class="mb-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#777971]">{project.status}</p>
+        <h2 class="mb-4 font-serif text-[30px] tracking-[-0.04em]">{project.title}</h2>
+        <p class="text-[15px] leading-[1.8] text-[#5f615a]">{project.summary}</p>
+      </article>
+    ))}
+  </section>
+</Layout>

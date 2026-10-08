@@ -1,0 +1,44 @@
+---
+interface Props {
+  currentPage?: 'home' | 'about' | 'projects' | 'skills' | 'contact';
+}
+
+const { currentPage = 'home' } = Astro.props;
+
+const navItems = [
+  { label: 'Home', href: '/', value: 'home' },
+  { label: 'About', href: '/about', value: 'about' },
+  { label: 'Projects', href: '/projects', value: 'projects' },
+  { label: 'Skills', href: '/skills', value: 'skills' },
+  { label: 'Contact', href: '/contact', value: 'contact' },
+];
+---
+
+<header class="flex h-[94px] items-center justify-between border-b border-[#e3e2dc] max-[640px]:h-[74px]">
+  <a class="font-serif text-[39px] font-bold leading-none tracking-[-5px] max-[640px]:text-[35px]" href="/" aria-label="Jordan Lee, home">
+    j<span class="text-[#98b738]">.</span>
+  </a>
+
+  <nav class="flex items-center gap-[clamp(22px,4vw,58px)] text-xs max-[900px]:gap-[22px] max-[640px]:gap-[17px] max-[640px]:text-[10px]" aria-label="Main navigation">
+    {navItems.map((item) => {
+      const isCurrent = currentPage === item.value;
+
+      return (
+        <a
+          class:list={[
+            'text-[#65675f] transition-colors duration-200 hover:text-[#829d2f]',
+            isCurrent && 'text-[#20231f] hover:text-[#20231f]',
+          ]}
+          href={item.href}
+          aria-current={isCurrent ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      );
+    })}
+
+    <a class="rounded-[30px] border border-[#c7c8bd] px-[17px] py-3 transition-colors duration-200 hover:border-[#d7f36a] hover:bg-[#d7f36a] max-[640px]:px-[13px] max-[640px]:py-[10px]" href="mailto:hello@jordanlee.design">
+      Let’s talk <span class="ml-[9px]" aria-hidden="true">↗</span>
+    </a>
+  </nav>
+</header>

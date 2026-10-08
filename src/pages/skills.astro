@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const skillGroups = [
+  { title: 'Design', items: ['Brand systems', 'UX strategy', 'Art direction', 'Web design'] },
+  { title: 'Development', items: ['Astro', 'HTML/CSS', 'JavaScript', 'UX engineering'] },
+  { title: 'Process', items: ['Research', 'Prototyping', 'Iteration', 'Collaboration'] },
+];
+---
+
+<Layout title="Skills — Jordan Lee" description="A snapshot of Jordan Lee's design, product, and development skills." currentPage="skills">
+  <section class="py-12">
+    <p class="mb-4 text-[10px] font-semibold uppercase tracking-[0.13em] text-[#777971]">Capabilities</p>
+    <h1 class="font-serif text-[clamp(46px,7vw,74px)] leading-[0.95] tracking-[-0.065em]">Thoughtful craft across strategy, design, and code.</h1>
+  </section>
+
+  <section class="grid gap-6 pb-16 md:grid-cols-3">
+    {skillGroups.map((group) => (
+      <article class="rounded-[28px] border border-[#e3e2dc] bg-[#faf9f5] p-6">
+        <h2 class="mb-5 font-serif text-[28px] tracking-[-0.04em]">{group.title}</h2>
+        <ul class="space-y-3 text-[15px] leading-[1.7] text-[#5f615a]">
+          {group.items.map((item) => (
+            <li class="flex items-center gap-3"><span class="inline-block h-2.5 w-2.5 rounded-full bg-[#98b738]"></span>{item}</li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </section>
+</Layout>
