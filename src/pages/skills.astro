@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
 
 const skillGroups = [
   { title: 'Design', items: ['Brand systems', 'UX strategy', 'Art direction', 'Web design'] },
@@ -8,11 +9,8 @@ const skillGroups = [
 ];
 ---
 
-<Layout title="Skills — Jordan Lee" description="A snapshot of Jordan Lee's design, product, and development skills." currentPage="skills">
-  <section class="py-12">
-    <p class="mb-4 text-[10px] font-semibold uppercase tracking-[0.13em] text-[#777971]">Capabilities</p>
-    <h1 class="font-serif text-[clamp(46px,7vw,74px)] leading-[0.95] tracking-[-0.065em]">Thoughtful craft across strategy, design, and code.</h1>
-  </section>
+<Layout title="Skills" description="A snapshot of Jordan Lee's design, product, and development skills.">
+  <PageHeader eyebrow="Capabilities" title="Thoughtful craft across strategy, design, and code." />
 
   <section class="grid gap-6 pb-16 md:grid-cols-3">
     {skillGroups.map((group) => (

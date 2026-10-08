@@ -1,0 +1,34 @@
+---
+import Eyebrow from '../ui/Eyebrow.astro';
+import ArrowLink from '../ui/ArrowLink.astro';
+---
+
+<section class="relative grid min-h-[635px] grid-cols-[1.22fr_0.78fr] items-center gap-[7%] py-[72px] pb-20 max-[900px]:min-h-[560px] max-[900px]:grid-cols-[1.1fr_0.9fr] max-[900px]:gap-[4%] max-[640px]:grid-cols-1 max-[640px]:gap-9 max-[640px]:py-[63px] max-[640px]:pb-[66px]" aria-labelledby="hero-title">
+  <div class="relative z-[1] py-[22px] pb-[30px] max-[640px]:p-0">
+    <Eyebrow class="m-0 leading-[1.5]" dot>Independent creative · Brooklyn, NY</Eyebrow>
+    <h1 class="my-[29px] mb-[34px] -ml-[5px] max-w-[700px] font-serif text-[clamp(56px,7vw,96px)] font-normal leading-[0.98] tracking-[-0.075em] max-[900px]:text-[clamp(54px,8vw,76px)] max-[640px]:my-[25px] max-[640px]:mb-[22px] max-[640px]:-ml-[3px] max-[640px]:text-[clamp(55px,13vw,77px)]" id="hero-title">
+      Good ideas,<br />made <em class="font-normal text-[#809632]">feel</em> something<span class="text-[#98b738]">.</span>
+    </h1>
+    <div class="flex items-end gap-9 max-[900px]:items-start max-[900px]:flex-col max-[900px]:gap-5 max-[640px]:gap-[18px]">
+      <p class="mb-0 max-w-[305px] text-[13px] leading-[1.85] text-[#666860] max-[640px]:text-xs">
+        I'm Jordan — a designer and developer partnering with good people to make the digital world a little more thoughtful.
+      </p>
+      <ArrowLink href="#work" arrow="↓">A few things I've made</ArrowLink>
+    </div>
+  </div>
+
+  <div class="relative mt-2 h-[450px] w-full justify-self-end bg-[#e1dfd5] max-[900px]:h-[390px] max-[640px]:mx-auto max-[640px]:mt-0 max-[640px]:h-auto max-[640px]:aspect-[0.9] max-[640px]:w-[min(84%,360px)]">
+    <img class="block size-full object-cover object-[center_38%] saturate-[0.72]" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=90" alt="Editorial portrait of a creative professional" fetchpriority="high" />
+    <div class="absolute -right-8 bottom-[31px] flex -rotate-3 items-center gap-[11px] bg-[#d7f36a] px-[18px] py-[14px] font-serif text-[13px] leading-[1.35] max-[640px]:-right-[21px] max-[640px]:bottom-[25px]">
+      <span class="text-[21px]" aria-hidden="true">✳</span>
+      <span>Curious by nature.<br />Intentional by design.</span>
+    </div>
+    <span class="absolute right-3 top-[13px] text-[8px] tracking-[0.12em] text-white [text-shadow:0_1px_5px_#333]" aria-hidden="true">40° 41' N / 73° 59' W</span>
+  </div>
+
+  <div class="absolute -right-[31px] bottom-[63px] flex origin-bottom-right translate-x-full rotate-90 flex-col gap-[3px] text-[7px] font-semibold tracking-[0.12em] text-[#808176] max-[640px]:-right-[13px] max-[640px]:bottom-[50px]" aria-hidden="true">
+    <span>DESIGN WITH</span>
+    <span>GOOD INTENTIONS</span>
+    <span class="absolute -left-5 top-[9px] text-base text-[#91a943]">✳</span>
+  </div>
+</section>

@@ -1,27 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import { MAILTO, SITE, SOCIAL_LINKS } from '../config/site';
 
 const contactDetails = [
-  { label: 'Email', value: 'hello@jordanlee.design', href: 'mailto:hello@jordanlee.design' },
-  { label: 'Instagram', value: '@jordanlee', href: 'https://www.instagram.com/' },
-  { label: 'LinkedIn', value: 'Jordan Lee', href: 'https://www.linkedin.com/' },
+  { label: 'Email', value: SITE.email, href: MAILTO },
+  ...SOCIAL_LINKS.map((link) => ({ label: link.label, value: link.handle, href: link.href })),
 ];
 ---
 
-<Layout title="Contact — Jordan Lee" description="Get in touch with Jordan Lee for design, product, and development work." currentPage="contact">
-  <section class="py-12">
-    <p class="mb-4 text-[10px] font-semibold uppercase tracking-[0.13em] text-[#777971]">Let's talk</p>
-    <h1 class="mb-8 font-serif text-[clamp(46px,7vw,74px)] leading-[0.95] tracking-[-0.065em]">Open for thoughtful collaborations and select projects.</h1>
-
+<Layout title="Contact" description="Get in touch with Jordan Lee for design, product, and development work.">
+  <PageHeader eyebrow="Let's talk" title="Open for thoughtful collaborations and select projects." titleClass="mb-8">
     <div class="rounded-[28px] bg-[#23261f] p-8 text-[#f7f6f2]">
       <p class="max-w-lg text-[17px] leading-[1.8] text-[#edf0e7]">
         I'm available for product design, brand direction, and front-end development work that values clarity, craft, and long-term thinking.
       </p>
-      <a class="mt-8 inline-flex items-center gap-3 rounded-[30px] bg-[#d7f36a] px-[17px] py-[14px] text-[10px] font-semibold text-[#24271f] transition-all duration-200 hover:gap-[18px]" href="mailto:hello@jordanlee.design">
+      <a class="mt-8 inline-flex items-center gap-3 rounded-[30px] bg-[#d7f36a] px-[17px] py-[14px] text-[10px] font-semibold text-[#24271f] transition-all duration-200 hover:gap-[18px]" href={MAILTO}>
         Start a conversation <span aria-hidden="true">↗</span>
       </a>
     </div>
-  </section>
+  </PageHeader>
 
   <section class="grid gap-5 pb-16 md:grid-cols-3">
     {contactDetails.map((item) => (

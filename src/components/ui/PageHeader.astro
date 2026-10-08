@@ -1,0 +1,17 @@
+---
+import Eyebrow from './Eyebrow.astro';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  titleClass?: string;
+}
+
+const { eyebrow, title, titleClass } = Astro.props;
+---
+
+<section class="py-12">
+  <Eyebrow class="mb-4">{eyebrow}</Eyebrow>
+  <h1 class:list={['font-serif text-[clamp(46px,7vw,74px)] leading-[0.95] tracking-[-0.065em]', titleClass]}>{title}</h1>
+  <slot />
+</section>

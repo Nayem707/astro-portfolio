@@ -1,36 +1,23 @@
 ---
+import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
-interface Props {
-  title?: string;
-  description?: string;
-  currentPage?: 'home' | 'about' | 'projects' | 'skills' | 'contact';
-}
+type Props = HeadProps;
 
-const {
-  title = 'Jordan Lee — Independent designer & developer',
-  description = 'Independent designer and developer making thoughtful digital experiences.',
-  currentPage = 'home',
-} = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth [scroll-padding-top:32px] motion-reduce:scroll-auto">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    <meta name="theme-color" content="#f7f6f2" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <BaseHead title={title} description={description} image={image} />
+    <slot name="head" />
   </head>
   <body class="bg-[#f7f6f2] text-[#20231f]">
     <div class="mx-auto w-full max-w-[1600px] overflow-hidden bg-[#f7f6f2] px-[7.1%] font-['Helvetica_Neue',Helvetica,Arial,sans-serif] text-[#20231f] antialiased max-[900px]:px-[5%] max-[640px]:px-[22px]">
-      <Navbar currentPage={currentPage} />
+      <Navbar />
       <main id="top">
         <slot />
       </main>
@@ -38,26 +25,3 @@ const {
     </div>
   </body>
 </html>
-
-<style>
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    min-height: 100%;
-  }
-
-  body {
-    line-height: 1.5;
-  }
-
-  a {
-    text-decoration: none;
-  }
-</style>

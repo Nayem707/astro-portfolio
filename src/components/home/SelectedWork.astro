@@ -1,0 +1,19 @@
+---
+import Eyebrow from '../ui/Eyebrow.astro';
+import ProjectCard from '../ProjectCard.astro';
+import { projects } from '../../data/projects';
+---
+
+<section class="border-t border-[#e3e2dc] py-[86px] pb-[106px] max-[640px]:py-[66px] max-[640px]:pb-[72px]" id="work" aria-labelledby="work-title">
+  <div class="mb-[37px] flex items-end justify-between max-[640px]:mb-[26px]">
+    <div>
+      <Eyebrow class="m-0 leading-[1.5]">A few recent favorites</Eyebrow>
+      <h2 class="-ml-0.5 mt-[11px] mb-0 font-serif text-[clamp(38px,5vw,58px)] font-normal leading-none tracking-[-0.06em]" id="work-title">Selected work<span class="text-[#98b738]">.</span></h2>
+    </div>
+    <p class="mb-1 mr-px text-right text-[11px] leading-[1.7] text-[#777971] max-[640px]:text-[9px]">A little bit of strategy,<br />a lot of heart.</p>
+  </div>
+
+  <div class="grid grid-cols-3 gap-[22px] max-[900px]:gap-[15px] max-[640px]:grid-cols-1 max-[640px]:gap-[34px]">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</section>

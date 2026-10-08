@@ -1,125 +1,16 @@
 ﻿---
 import Layout from '../layouts/Layout.astro';
-
-const projects = [
-  {
-    number: '01',
-    name: 'Fieldnotes',
-    type: 'Brand platform · Digital product',
-    description: 'A calmer way for curious people to collect the things they notice.',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=85',
-    alt: 'A notebook and coffee on a sunlit desk',
-    imageClass: 'saturate-[0.72]',
-  },
-  {
-    number: '02',
-    name: 'Openhouse',
-    type: 'Product design · Development',
-    description: 'Making the search for a place to belong feel a little more human.',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85',
-    alt: 'A warm, thoughtfully designed living room',
-    imageClass: 'saturate-[0.76]',
-  },
-  {
-    number: '03',
-    name: 'Goodside',
-    type: 'Art direction · E-commerce',
-    description: 'A bright new home for everyday essentials, made to last.',
-    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1200&q=85',
-    alt: 'A reusable water bottle in soft afternoon light',
-    imageClass: 'saturate-[0.7]',
-  },
-];
+import Hero from '../components/home/Hero.astro';
+import SelectedWork from '../components/home/SelectedWork.astro';
+import AboutPreview from '../components/home/AboutPreview.astro';
+import ContactCTA from '../components/home/ContactCTA.astro';
 ---
 
-<Layout title="Jordan Lee — Independent designer & developer" description="Jordan Lee is an independent designer and developer making thoughtful digital experiences for people and the planet." currentPage="home">
+<Layout description="Jordan Lee is an independent designer and developer making thoughtful digital experiences for people and the planet.">
   <div class="w-full">
-    <section class="relative grid min-h-[635px] grid-cols-[1.22fr_0.78fr] items-center gap-[7%] py-[72px] pb-20 max-[900px]:min-h-[560px] max-[900px]:grid-cols-[1.1fr_0.9fr] max-[900px]:gap-[4%] max-[640px]:grid-cols-1 max-[640px]:gap-9 max-[640px]:py-[63px] max-[640px]:pb-[66px]" aria-labelledby="hero-title">
-      <div class="relative z-[1] py-[22px] pb-[30px] max-[640px]:p-0">
-        <p class="m-0 text-[10px] font-semibold uppercase leading-[1.5] tracking-[0.13em] text-[#777971]"><span class="mr-2 inline-block size-[7px] rounded-full bg-[#8aa739] shadow-[0_0_0_3px_#e8edda]" aria-hidden="true"></span>Independent creative · Brooklyn, NY</p>
-        <h1 class="my-[29px] mb-[34px] -ml-[5px] max-w-[700px] font-serif text-[clamp(56px,7vw,96px)] font-normal leading-[0.98] tracking-[-0.075em] max-[900px]:text-[clamp(54px,8vw,76px)] max-[640px]:my-[25px] max-[640px]:mb-[22px] max-[640px]:-ml-[3px] max-[640px]:text-[clamp(55px,13vw,77px)]" id="hero-title">
-          Good ideas,<br />made <em class="font-normal text-[#809632]">feel</em> something<span class="text-[#98b738]">.</span>
-        </h1>
-        <div class="flex items-end gap-9 max-[900px]:items-start max-[900px]:flex-col max-[900px]:gap-5 max-[640px]:gap-[18px]">
-          <p class="mb-0 max-w-[305px] text-[13px] leading-[1.85] text-[#666860] max-[640px]:text-xs">
-            I'm Jordan — a designer and developer partnering with good people to make the digital world a little more thoughtful.
-          </p>
-          <a class="inline-flex items-center gap-[13px] whitespace-nowrap border-b border-[#aeb09f] pb-[5px] text-[11px] font-semibold transition-all duration-200 hover:gap-[19px] hover:border-[#809632] motion-reduce:transition-none" href="#work">A few things I've made <span aria-hidden="true">↓</span></a>
-        </div>
-      </div>
-
-      <div class="relative mt-2 h-[450px] w-full justify-self-end bg-[#e1dfd5] max-[900px]:h-[390px] max-[640px]:mx-auto max-[640px]:mt-0 max-[640px]:h-auto max-[640px]:aspect-[0.9] max-[640px]:w-[min(84%,360px)]">
-        <img class="block size-full object-cover object-[center_38%] saturate-[0.72]" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=90" alt="Editorial portrait of a creative professional" fetchpriority="high" />
-        <div class="absolute -right-8 bottom-[31px] flex -rotate-3 items-center gap-[11px] bg-[#d7f36a] px-[18px] py-[14px] font-serif text-[13px] leading-[1.35] max-[640px]:-right-[21px] max-[640px]:bottom-[25px]">
-          <span class="text-[21px]" aria-hidden="true">✳</span>
-          <span>Curious by nature.<br />Intentional by design.</span>
-        </div>
-        <span class="absolute right-3 top-[13px] text-[8px] tracking-[0.12em] text-white [text-shadow:0_1px_5px_#333]" aria-hidden="true">40° 41' N / 73° 59' W</span>
-      </div>
-
-      <div class="absolute -right-[31px] bottom-[63px] flex origin-bottom-right translate-x-full rotate-90 flex-col gap-[3px] text-[7px] font-semibold tracking-[0.12em] text-[#808176] max-[640px]:-right-[13px] max-[640px]:bottom-[50px]" aria-hidden="true">
-        <span>DESIGN WITH</span>
-        <span>GOOD INTENTIONS</span>
-        <span class="absolute -left-5 top-[9px] text-base text-[#91a943]">✳</span>
-      </div>
-    </section>
-
-    <section class="border-t border-[#e3e2dc] py-[86px] pb-[106px] max-[640px]:py-[66px] max-[640px]:pb-[72px]" id="work" aria-labelledby="work-title">
-      <div class="mb-[37px] flex items-end justify-between max-[640px]:mb-[26px]">
-        <div>
-          <p class="m-0 text-[10px] font-semibold uppercase leading-[1.5] tracking-[0.13em] text-[#777971]">A few recent favorites</p>
-          <h2 class="-ml-0.5 mt-[11px] mb-0 font-serif text-[clamp(38px,5vw,58px)] font-normal leading-none tracking-[-0.06em]" id="work-title">Selected work<span class="text-[#98b738]">.</span></h2>
-        </div>
-        <p class="mb-1 mr-px text-right text-[11px] leading-[1.7] text-[#777971] max-[640px]:text-[9px]">A little bit of strategy,<br />a lot of heart.</p>
-      </div>
-
-      <div class="grid grid-cols-3 gap-[22px] max-[900px]:gap-[15px] max-[640px]:grid-cols-1 max-[640px]:gap-[34px]">
-        {projects.map((project) => (
-          <article class="group">
-            <a class="relative block aspect-[1.12] overflow-hidden bg-[#e6e4dc] max-[640px]:aspect-[1.28]" href="mailto:hello@jordanlee.design" aria-label={`Ask Jordan about ${project.name}`}>
-              <img class:list={['block size-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.045] motion-reduce:transition-none', project.imageClass]} src={project.image} alt={project.alt} loading="lazy" />
-              <span class="absolute right-[14px] bottom-[14px] grid size-[37px] place-items-center rounded-full bg-[#d7f36a] text-base transition-transform duration-200 group-hover:rotate-45 motion-reduce:transition-none" aria-hidden="true">↗</span>
-            </a>
-            <div class="mt-[19px] flex items-start gap-[13px] max-[640px]:mt-[15px]">
-              <span class="pt-1 text-[9px] text-[#898b81]">{project.number}</span>
-              <div>
-                <h3 class="mb-1 font-serif text-[22px] font-normal tracking-[-0.03em]">{project.name}</h3>
-                <p class="mb-0 text-[10px] leading-[1.6] text-[#777971]">{project.type}</p>
-              </div>
-            </div>
-            <p class="mt-[13px] mb-0 ml-[29px] text-[11px] leading-[1.6] text-[#5f615a] max-[640px]:mt-[9px]">{project.description}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="grid grid-cols-[0.85fr_1.15fr] gap-[10%] border-t border-[#e3e2dc] py-[88px] pb-[100px] max-[900px]:gap-[6%] max-[640px]:grid-cols-1 max-[640px]:gap-[31px] max-[640px]:py-[67px] max-[640px]:pb-[72px]" id="about" aria-labelledby="about-title">
-      <div class="relative pt-[9px]">
-        <p class="m-0 text-[10px] font-semibold uppercase leading-[1.5] tracking-[0.13em] text-[#777971]">The person behind the pixels</p>
-        <span class="absolute top-[52px] left-[9px] rotate-[22deg] font-serif text-[90px] font-normal text-[#98b738] max-[640px]:top-[-12px] max-[640px]:right-[25px] max-[640px]:left-auto max-[640px]:text-[66px]" aria-hidden="true">↘</span>
-      </div>
-      <div>
-        <h2 class="-ml-[3px] mb-[23px] font-serif text-[clamp(46px,6vw,70px)] font-normal leading-[0.98] tracking-[-0.065em] max-[640px]:text-[clamp(53px,12vw,70px)]" id="about-title">Small details.<br /><em class="font-normal text-[#809632]">Big feelings.</em></h2>
-        <p class="mb-7 max-w-[480px] text-xs leading-[1.9] text-[#65675f]">
-          I work at the intersection of design and code, bringing a considered eye and a curious mind to every project. From the first messy idea to the final tiny detail, I love making things that feel clear, useful, and unmistakably human.
-        </p>
-        <div class="mb-[29px] grid grid-cols-2 gap-[15px] border-y border-[#e3e2dc] py-[18px]">
-          <div class="flex flex-col gap-[7px]"><span class="text-[9px] uppercase tracking-[0.06em] text-[#777971]">Currently</span><strong class="text-[10px] font-medium">Taking on select projects</strong></div>
-          <div class="flex flex-col gap-[7px]"><span class="text-[9px] uppercase tracking-[0.06em] text-[#777971]">Usually found</span><strong class="text-[10px] font-medium">With a coffee & a long playlist</strong></div>
-        </div>
-        <a class="inline-flex items-center gap-[13px] whitespace-nowrap border-b border-[#aeb09f] pb-[5px] text-[11px] font-semibold transition-all duration-200 hover:gap-[19px] hover:border-[#809632] motion-reduce:transition-none" href="mailto:hello@jordanlee.design">More about working together <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <section class="bg-[#23261f] px-[6.2%] pt-[45px] pb-[50px] text-[#f7f6f2] max-[640px]:mx-[-22px] max-[640px]:px-[22px] max-[640px]:pt-[31px] max-[640px]:pb-9" aria-labelledby="contact-title">
-      <div class="flex justify-between text-[9px] uppercase tracking-[0.08em] text-[#c4c5bc] max-[640px]:gap-3 max-[640px]:text-[8px]">
-        <span>Have a good one in mind?</span>
-        <span class="max-[640px]:text-right">Currently booking for 2026</span>
-      </div>
-      <h2 class="-ml-[5px] mt-[58px] mb-9 font-serif text-[clamp(54px,8.3vw,100px)] font-normal leading-[0.91] tracking-[-0.075em] max-[640px]:-ml-[3px] max-[640px]:mt-[54px] max-[640px]:mb-[30px] max-[640px]:text-[clamp(55px,12vw,76px)]" id="contact-title">Let's make<br /><em class="font-normal text-[#d7f36a]">something matter.</em></h2>
-      <a class="inline-flex items-center gap-8 rounded-[30px] bg-[#d7f36a] px-[17px] py-[14px] text-[10px] font-semibold text-[#24271f] transition-all duration-200 hover:gap-[42px] hover:bg-[#e4ff8a] motion-reduce:transition-none" href="mailto:hello@jordanlee.design">
-        Tell me about it <span aria-hidden="true">↗</span>
-      </a>
-    </section>
+    <Hero />
+    <SelectedWork />
+    <AboutPreview />
+    <ContactCTA />
   </div>
 </Layout>

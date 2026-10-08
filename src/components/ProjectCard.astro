@@ -1,0 +1,26 @@
+---
+import type { Project } from '../data/projects';
+import { MAILTO, SITE } from '../config/site';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const firstName = SITE.name.split(' ')[0];
+---
+
+<article class="group">
+  <a class="relative block aspect-[1.12] overflow-hidden bg-[#e6e4dc] max-[640px]:aspect-[1.28]" href={MAILTO} aria-label={`Ask ${firstName} about ${project.name}`}>
+    <img class:list={['block size-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.045] motion-reduce:transition-none', project.imageClass]} src={project.image} alt={project.alt} loading="lazy" />
+    <span class="absolute right-[14px] bottom-[14px] grid size-[37px] place-items-center rounded-full bg-[#d7f36a] text-base transition-transform duration-200 group-hover:rotate-45 motion-reduce:transition-none" aria-hidden="true">↗</span>
+  </a>
+  <div class="mt-[19px] flex items-start gap-[13px] max-[640px]:mt-[15px]">
+    <span class="pt-1 text-[9px] text-[#898b81]">{project.number}</span>
+    <div>
+      <h3 class="mb-1 font-serif text-[22px] font-normal tracking-[-0.03em]">{project.name}</h3>
+      <p class="mb-0 text-[10px] leading-[1.6] text-[#777971]">{project.type}</p>
+    </div>
+  </div>
+  <p class="mt-[13px] mb-0 ml-[29px] text-[11px] leading-[1.6] text-[#5f615a] max-[640px]:mt-[9px]">{project.description}</p>
+</article>

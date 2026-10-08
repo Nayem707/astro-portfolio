@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+  /** Show the green status dot before the label. */
+  dot?: boolean;
+}
+
+const { class: className, dot = false } = Astro.props;
+---
+
+<p class:list={['text-[10px] font-semibold uppercase tracking-[0.13em] text-[#777971]', className]}>
+  {dot && <span class="mr-2 inline-block size-[7px] rounded-full bg-[#8aa739] shadow-[0_0_0_3px_#e8edda]" aria-hidden="true"></span>}<slot />
+</p>

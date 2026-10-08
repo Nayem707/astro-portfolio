@@ -1,0 +1,10 @@
+---
+interface Props {
+  href: string;
+  arrow?: string;
+}
+
+const { href, arrow = '↗' } = Astro.props;
+---
+
+<a class="inline-flex items-center gap-[13px] whitespace-nowrap border-b border-[#aeb09f] pb-[5px] text-[11px] font-semibold transition-all duration-200 hover:gap-[19px] hover:border-[#809632] motion-reduce:transition-none" href={href}><slot /> <span aria-hidden="true">{arrow}</span></a>

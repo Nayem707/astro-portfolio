@@ -1,8 +1,15 @@
+---
+import { SITE, SOCIAL_LINKS } from '../config/site';
+
+const year = new Date().getFullYear();
+---
+
 <footer class="flex min-h-[98px] items-center justify-between gap-5 border-t border-[#e3e2dc] pt-6 max-[640px]:min-h-[83px] max-[640px]:flex-wrap max-[640px]:gap-x-[15px] max-[640px]:gap-y-[6px] max-[640px]:pb-[18px]">
   <a class="font-serif text-[31px] font-bold leading-none tracking-[-5px]" href="#top" aria-label="Back to top">j<span class="text-[#98b738]">.</span></a>
-  <p class="mb-0 text-[9px] text-[#777971] max-[640px]:order-1 max-[640px]:w-full">Made with care, in Brooklyn. <span aria-hidden="true">©</span> 2026</p>
+  <p class="mb-0 text-[9px] text-[#777971] max-[640px]:order-1 max-[640px]:w-full">Made with care, in {SITE.location}. <span aria-hidden="true">©</span> {year}</p>
   <div class="flex gap-[22px] text-[9px] text-[#777971] max-[640px]:gap-[14px]">
-    <a class="transition-colors hover:text-[#829d2f] motion-reduce:transition-none" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a>
-    <a class="transition-colors hover:text-[#829d2f] motion-reduce:transition-none" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+    {SOCIAL_LINKS.map((link) => (
+      <a class="transition-colors hover:text-[#829d2f] motion-reduce:transition-none" href={link.href} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>
+    ))}
   </div>
 </footer>
